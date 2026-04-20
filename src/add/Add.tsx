@@ -15,29 +15,12 @@ export default function Add({ isOpen, onClose }: AddProps) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-  const [isImportanceOpen, setIsImportanceOpen] = useState(false);
 
-
-
-  const tags = ["Refaktor", "Tezkor", "Kod"];
   const categories = ["Ish", "Shaxsiy", "O'qish", "G'oya"];
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
     setIsCategoryOpen(false);
-  };
-
-  const handleImportanceSelect = (importance: string) => {
-    setSelectedImportance(importance);
-    setIsImportanceOpen(false);
-  };
-
-  const handleTagSelect = (tag: string) => {
-    if (selectedTags.includes(tag)) {
-      setSelectedTags(selectedTags.filter((t) => t !== tag));
-    } else {
-      setSelectedTags([...selectedTags, tag]);
-    }
   };
 
   const handleSave = () => {

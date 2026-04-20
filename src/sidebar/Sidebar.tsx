@@ -1,10 +1,10 @@
+import React from "react";
 import {
   FaBriefcase,
   FaUser,
   FaLightbulb,
   FaPlusCircle,
   FaBookmark,
-
 } from "react-icons/fa";
 import { useState } from "react";
 import { PiBookBookmark } from "react-icons/pi";
@@ -15,7 +15,7 @@ import { useNotes } from "../NotesContext";
 
 interface Category {
   name: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   path: string;
   color: string;
 }
@@ -80,8 +80,6 @@ export default function Sidebar() {
     return notes.filter((note) => note.category === categoryName).length;
   };
 
-
-
   return (
     <>
       <div
@@ -143,7 +141,6 @@ export default function Sidebar() {
                 >
                   Notes App
                 </h2>
-
               </div>
             </div>
 
@@ -176,8 +173,6 @@ export default function Sidebar() {
               <FaPlusCircle />
             </button>
           </div>
-
-
         </div>
 
         <div
@@ -283,37 +278,6 @@ export default function Sidebar() {
               })}
             </div>
           </div>
-
-          <div
-
-          >
-
-
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
-            >
-              {categories.slice(1).map((category) => {
-                const count = getNoteCount(category.name);
-                const total = notes.length;
-                const percentage =
-                  total > 0 ? Math.round((count / total) * 100) : 0;
-
-                return (
-                  <div
-                    key={category.name}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                    }}
-                  >
-
-
-                  </div>
-                );
-              })}
-            </div>
-          </div>
         </div>
 
         <div
@@ -344,11 +308,7 @@ export default function Sidebar() {
                 e.currentTarget.style.backgroundColor = "transparent";
               }
             }}
-          >
-
-          </div>
-
-
+          ></div>
         </div>
       </div>
 
