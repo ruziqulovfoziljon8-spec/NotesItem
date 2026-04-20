@@ -24,6 +24,8 @@ const NotesContext = createContext<NotesContextType | undefined>(undefined);
 export const NotesProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [notes, setNotes] = useState<Note[]>([
 
+
+
   ]);
 
   const addNote = (note: Omit<Note, 'id' | 'date'>) => {
@@ -41,6 +43,7 @@ export const NotesProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     ));
   };
 
+  
   const deleteNote = (id: string) => {
     setNotes(notes.filter(note => note.id !== id));
   };
